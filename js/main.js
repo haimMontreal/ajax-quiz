@@ -37,11 +37,23 @@ $('tbody').hide();
     });
 
 function getMovies(searchText){
-    axios.get( 'http://api.tvmaze.com/search/shows?q='+searchText)
+    axios.get( 'http://api.tvmaze.com/singlesearch/shows?q='+searchText)
     .then((response)=> {
+        console.log(response);
+        let movies = response.data.Search;
+        let output ='';
+       .done();
+             
         
     })
     .catch((err) => {
         console.log(err);
     });
+})
+
+/*
+function movie($(search).val()){
+axios.get( 'http://api.tvmaze.com/singlesearch/shows?q='+search);
 }
+ movie(($(search).val())); 
+ */
