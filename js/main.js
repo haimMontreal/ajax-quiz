@@ -24,3 +24,24 @@ $(document).ready(
         })
     }
 )
+
+$('tbody').hide();
+    $('h1').hide();
+        
+    $(document).ready( () => {
+        $('postForm').on('submit', (e) => {
+            let searchText = $('postForm').val();
+            getMovies(searchText);
+            e.preventDefault();
+        });
+    });
+
+function getMovies(searchText){
+    axios.get( 'http://api.tvmaze.com/search/shows?q='+searchText)
+    .then((response)=> {
+        
+    })
+    .catch((err) => {
+        console.log(err);
+    });
+}
